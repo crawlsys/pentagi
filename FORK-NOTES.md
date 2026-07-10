@@ -1,4 +1,4 @@
-# kvncrw/pentagi — fork notes
+# crawlsys/pentagi — fork notes
 
 Divergence from upstream `vxcontrol/pentagi`: **prompt-shaping to fix autonomous
 closure** when driving a capable-but-non-self-limiting model (validated against
@@ -23,4 +23,5 @@ not a model limitation. Changes (all in `backend/pkg/templates/prompts/`):
 Meta-principle: shift the model from *test exhaustively* to *test until you can make
 the CONFIRMED/NOT-CONFIRMED decision, then stop.*
 
-Writeup: https://blog.crawley.systems
+Writeup: https://blog.crawley.systems/posts/local-glm-autonomous-pentest.html
+Repo: https://github.com/crawlsys/pentagi
