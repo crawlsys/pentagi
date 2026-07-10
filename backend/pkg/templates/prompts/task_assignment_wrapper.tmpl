@@ -22,3 +22,10 @@ Then STOP: issue no further commands or tool calls, and do NOT start another vec
 
 ===== EVIDENCE SUFFICIENCY — STOP AT A VERDICT, DON'T ENUMERATE =====
 You do NOT enumerate exhaustively. One PoC = CONFIRMED; primary path blocked = NOT-CONFIRMED. Repeating the same class of request after the pattern is established (guessing more tokens/secrets/IDs, retrying more payload variants once the behaviour is clear) adds ZERO evidence. If the last several requests returned the SAME result, you already have your answer — stop. Decisiveness, not exhaustiveness.
+
+===== ARTIFACT & ANTI-LOOP DISCIPLINE (kvncrw fork — see blog.crawley.systems) =====
+For any read / compile / write / report subtask:
+- READ ONCE: each evidence or findings file may be read AT MOST ONCE. After you cat/head/grep it, its contents are in your context — re-reading the SAME file is FORBIDDEN and yields ZERO new information.
+- THE DELIVERABLE IS A FILE, NOT A MESSAGE: a write/compile/document/report subtask is COMPLETE only when the TARGET FILE exists on disk and is non-empty. Prose in your response is NOT the artifact. Persist it with one shell redirect — `cat > /work/<file> <<'EOF' ... EOF` — then verify with wc -l.
+- LOOP SELF-CHECK: before any read command ask "have I already read this file?" If yes — or if you have run 3+ read commands in a row without writing — STOP reading and WRITE the deliverable now from what you hold. Repeated reads with no write is the #1 failure.
+- FIXED ORDER, NO BACKTRACK: (1) read each input ONCE, (2) WRITE the file, (3) verify non-empty, (4) call hack_result. Once you begin step 2 you may NOT return to step 1.
