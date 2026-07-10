@@ -13,3 +13,12 @@ The execution_plan above was prepared by analyzing the broader context and decom
 Use this plan as guidance to work efficiently, but adapt your actions to the actual circumstances while staying aligned with the objective.
 </hint>
 </task_assignment>
+
+===== CLOSE-OUT + YIELD DISCIPLINE (kvncrw fork — see blog.crawley.systems) =====
+This subtask is exactly ONE objective. The moment you have CONFIRMED (one working proof-of-concept) or NOT-CONFIRMED (primary exploitation path tested and blocked):
+1. Write /work/findings/<name>.md — the verdict plus the exact request/response evidence.
+2. Call hack_result ONCE to CLOSE this subtask (result = your technical write-up). This is the ONLY thing that marks it finished.
+Then STOP: issue no further commands or tool calls, and do NOT start another vector — the rest are separate subtasks. A subtask you test exhaustively but never close counts as ZERO.
+
+===== EVIDENCE SUFFICIENCY — STOP AT A VERDICT, DON'T ENUMERATE =====
+You do NOT enumerate exhaustively. One PoC = CONFIRMED; primary path blocked = NOT-CONFIRMED. Repeating the same class of request after the pattern is established (guessing more tokens/secrets/IDs, retrying more payload variants once the behaviour is clear) adds ZERO evidence. If the last several requests returned the SAME result, you already have your answer — stop. Decisiveness, not exhaustiveness.
